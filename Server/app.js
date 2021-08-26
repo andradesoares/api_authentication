@@ -1,8 +1,14 @@
 const express = require('express')
 const morgan = require('morgan')
 const session = require('express-session');
+const passport = require("passport")
 
 require('dotenv').config()
+require('./config/passport-jwt')
+require('./config/passport-local')
+require('./config/passport-google')
+require('./config/passport-twitter')
+require('./config/passport-facebook')
 
 const app = express()
 
@@ -16,6 +22,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false
 }));
+app.use(passport.initialize())
 
 //Routes
 app.use('/user', require('./routes/user'))

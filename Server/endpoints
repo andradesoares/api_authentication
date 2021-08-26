@@ -1,0 +1,39 @@
+CADASTRO {
+  rota: user/signup
+  body: {
+    email
+    passowrd
+  }
+}
+
+LOGIN {
+  rota: user/signin
+  body: {
+    email
+    passowrd
+  }
+}
+  
+ENVIAR EMAIL {
+  rota: user/password_reset
+  body: {
+    email
+  }
+}
+  
+RESETAR PASSWORD {
+  rota: user/password_reset?token=
+  param: {
+    token
+  }
+}
+
+
+LOGIN GOOGLE
+user/auth/google
+
+LOGIN FACEBOOK
+user/auth/facebook
+
+LOGIN TWITTER
+user/auth/twitter
